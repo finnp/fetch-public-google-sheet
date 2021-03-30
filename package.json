@@ -1,9 +1,10 @@
 {
   "name": "fetch-public-google-sheet",
   "version": "1.0.0",
-  "description": "",
+  "description": "Fetch public google sheet data",
   "main": "index.js",
   "scripts": {
+    "test": "node test",
     "format": "prettier-standard --format"
   },
   "author": "",
