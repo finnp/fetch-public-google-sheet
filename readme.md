@@ -21,7 +21,7 @@ Caution: The module doesn't work properly if you use numbers in your spreadsheet
 
 ## Acknowledgments
 
-The hard parts of this module are stoled from [cuba](https://www.npmjs.com/package/cuba by) [yuanqing](https://github.com/yuanqing). Check it out for more complex use cases. I didn't use it as a dependency because I also fixed [an issue with empty cells](https://github.com/yuanqing/cuba/issues/6).
+The hard parts of this module are stoled from [cuba](https://www.npmjs.com/package/cuba) by [yuanqing](https://github.com/yuanqing). Check it out for more complex use cases. I didn't use it as a dependency because I also fixed [an issue with empty cells](https://github.com/yuanqing/cuba/issues/6).
 
 ## Set up your Google Sheet to work
 
