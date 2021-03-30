@@ -1,0 +1,23 @@
+{
+  "name": "fetch-public-google-sheet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier-standard --format"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "google-spreadsheets-key-parser": "^1.1.0",
+    "got": "^11.8.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.23.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.3.1",
+    "prettier-standard": "^16.4.1"
+  }
+}
