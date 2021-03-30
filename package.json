@@ -11,7 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "google-spreadsheets-key-parser": "^1.1.0",
-    "got": "^11.8.2"
+    "got": "^11.8.2",
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "eslint": "^7.23.0",

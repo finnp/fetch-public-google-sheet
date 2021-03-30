@@ -1,14 +1,15 @@
 const getKeyForUrl = require('google-spreadsheets-key-parser')
 const got = require('got')
+const { set } = require('lodash')
 
-async function fetchSheet (url) {
+async function fetchSheet (url, { indexBy = 'row' } = {}) {
   const { key } = getKeyForUrl(url)
 
   const fetchUrl = buildUrl(key)
 
   const raw = await fetch(fetchUrl)
 
-  const result = format(raw)
+  const result = format(raw, indexBy === 'column')
 
   return result
 }
@@ -30,23 +31,21 @@ async function fetch (url) {
   return json.table
 }
 
-function format (raw) {
+function format (raw, swopped) {
   const data = {}
   const columnKeys = getColumnKeys(raw)
-  columnKeys.forEach(key => {
-    data[key] = {}
-  })
   const rows = raw.rows.map(a => a.c).slice(1)
 
   rows.forEach(row => {
     const rowKey = row[0]?.v
-    columnKeys.forEach(key => {
-      data[key][rowKey] = {}
-    })
     row.slice(1).forEach((cell, index) => {
       const value = cell?.v
       const columnKey = columnKeys[index]
-      data[columnKey][rowKey] = value
+      if (swopped) {
+        set(data, [columnKey, rowKey], value)
+      } else {
+        set(data, [rowKey, columnKey], value)
+      }
     })
   })
   return data
